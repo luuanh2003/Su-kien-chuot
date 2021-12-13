@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="abc()">
+<img id="nobita" style="position: absolute; width: 10% ; left: 0 ; right: 0 ; top: 0"
+     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjcQmemIRb9YIYpUnnUzapAzYWgcagUOCvsg&usqp=CAU" alt="">
+<!--    <img id="nobita" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjcQmemIRb9YIYpUnnUzapAzYWgcagUOCvsg&usqp=CAU" style="position: absolute;left: 0;top: 0 ; width:10%"/>-->
+
+
+<script>
+    let element;
+
+    function upA() {
+        element = document.getElementById('nobita');
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+
+    function downB() {
+        element = document.getElementById('nobita');
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+
+    function leftC() {
+        element = document.getElementById('nobita');
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+
+    function rightD() {
+        element = document.getElementById('nobita');
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                leftC()
+                break;
+            case 39:
+                rightD()
+                break;
+            case 38:
+                upA()
+                break;
+            case 40:
+                downB()
+                break;
+        }
+
+
+    }
+
+    function abc() {
+        window.addEventListener('keydown', moveSelection)
+    }
+</script>
+</body>
+</html>
